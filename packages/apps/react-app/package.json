@@ -6,7 +6,9 @@
 	"scripts": {
 		"test_cli": "xl-cli pack ./index.js -d",
 		"test_cli_create": "xl-cli create",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "webpack-dev-server --config scripts/webpack.dev.js",
+		"build": "webpack --config scripts/webpack.prod.js"
 	},
 	"keywords": [],
 	"author": "",
