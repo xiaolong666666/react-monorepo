@@ -23,6 +23,9 @@ module.exports = function (isDev) {
 		// 用于引入文件时可以不写后缀名，本质是一个优先级的顺序（可能会影响构建性能）
 		resolve: {
 			extensions: [".tsx", ".ts", ".jsx", ".js"],
+			alias: {
+				"@": path.resolve(__dirname, "../src"),
+			},
 		},
 
 		// loeader：根据不同类型的文件，使用不同的解析器去识别对应文件的内容

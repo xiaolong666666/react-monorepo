@@ -1,10 +1,13 @@
 import React from "react";
-import styles from "./app.module.less";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./router";
 
 type Props = {};
 
-const App = (props: Props) => {
-	return <div className="text-center bg-orange-400 text-white">App</div>;
-};
+const App = (props: Props) => (
+	<BrowserRouter>
+		<Router />
+	</BrowserRouter>
+);
 
 export default App;
