@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import { useRoutes, RouteObject } from "react-router-dom";
-import Home from "../pages/home";
-import Recommend from "../pages/home/recommend";
+import Home from "@/pages/home";
+import Recommend from "@/pages/home/recommend";
+import Education from "@/pages/education";
 
 type ExtraBizObject = {
 	title?: ReactNode;
@@ -23,7 +24,7 @@ export const routes: Array<ZHRoute> = [
 	},
 	{
 		path: "/education/learning",
-		element: <div>知乎知学堂</div>,
+		element: <Education />,
 		title: "知乎知学堂",
 	},
 	{
