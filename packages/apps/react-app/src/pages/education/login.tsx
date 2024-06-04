@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@/components/button";
 import { ValidCore } from "@xl/valid-core";
 
@@ -7,8 +7,6 @@ type Props = {
 };
 
 const Education = ({ showLog }: Props) => {
-	const [logList, setLogList] = useState<Array<string>>([]);
-
 	const handleClick = () => {
 		const core: Record<string, any> = new ValidCore();
 
