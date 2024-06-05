@@ -17,12 +17,12 @@ steps
 
 #### phoneValidPlugin
 
--   params1：全局上下文
+-   params1：全局上下文 [compilation]
 -   params1：正则
 
 #### postUrlPlugin
 
--   params1：全局上下文
+-   params1：全局上下文 [compilation]
 -   params1：提交地址
 
 ## API

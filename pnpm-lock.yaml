@@ -63,6 +63,9 @@ importers:
       '@xl/cli':
         specifier: workspace:^
         version: link:../../libs/xl-cli
+      '@xl/store':
+        specifier: workspace:^
+        version: link:../../libs/store
       '@xl/valid-core':
         specifier: workspace:^
         version: link:../../libs/valid-core
@@ -129,6 +132,10 @@ importers:
       webpack-merge:
         specifier: ^5.10.0
         version: 5.10.0
+
+  packages/libs/pipe-line: {}
+
+  packages/libs/store: {}
 
   packages/libs/valid-core: {}
 

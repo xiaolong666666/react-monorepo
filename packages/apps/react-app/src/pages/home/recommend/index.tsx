@@ -141,7 +141,7 @@ const RecommendItem: FC<ItemProps> = ({ info }) => {
 				)}
 			</div>
 			<div
-				className={`flex w-full box-content gap-6 -mx-5 -mb-2.5 px-5 py-2.5 bg-white ${selected ? "sticky bottom-0 border-t shadow-sm" : ""}`}
+				className={`flex w-full box-content gap-6 -mx-5 -mb-5 px-5 py-2.5 bg-white ${selected ? "sticky bottom-0 border-t shadow-sm" : ""}`}
 			>
 				<div className="flex gap-1">
 					<div className="flex gap-1 h-7 items-center px-3 bg-blue-100 rounded-sm text-blue-500">
