@@ -7,6 +7,7 @@ type Props = {};
 const RecommendFollow = (props: Props) => {
 	const [list, setList] = useState([]);
 	const [pageNumber, setPageNumber] = useState(0);
+	console.log(list);
 
 	useEffect(() => {
 		get("/recommend_follow_people", { rec_type: "PC_HOME_FEED" }).then(
