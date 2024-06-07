@@ -108,7 +108,7 @@ const Search = (props: Props) => {
 			/>
 			<button
 				onClick={onSearch}
-				className="w-16 h-8 mx-4 text-sm text-white rounded-full bg-blue-500 hover:bg-blue-600 transition-all duration-300"
+				className="w-16 h-8 mx-4 text-sm text-slate-50 rounded-full bg-blue-500 hover:bg-blue-600 transition-all duration-300"
 			>
 				提问
 			</button>

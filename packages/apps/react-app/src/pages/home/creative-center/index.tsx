@@ -181,7 +181,9 @@ const CreativeCenter = (props: Props) => {
 						}}
 					>
 						{category.icon}
-						<div className="text-xs">{category.text}</div>
+						<div className="text-xs text-slate-950">
+							{category.text}
+						</div>
 					</button>
 				))}
 			</main>
