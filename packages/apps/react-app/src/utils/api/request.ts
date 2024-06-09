@@ -4,7 +4,7 @@ const instance = axios.create();
 
 instance.interceptors.response.use((res) => res.data);
 
-const BASE_URL = "http://192.168.31.144:3006/api";
+const BASE_URL = "http://192.168.43.150:3006/api";
 
 interface FeedOpts {
 	url: string;

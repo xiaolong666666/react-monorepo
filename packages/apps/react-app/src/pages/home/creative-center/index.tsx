@@ -245,7 +245,7 @@ const CreativeCenter = (props: Props) => {
 						<div className="flex justify-between gap-2 h-14 overflow-hidden">
 							<div className="flex flex-col flex-1 justify-start">
 								<div
-									className="text-sm overflow-hidden whitespace-normal text-ellipsis"
+									className="text-sm text-slate-950 overflow-hidden whitespace-normal text-ellipsis"
 									style={{
 										display: "-webkit-box",
 										WebkitLineClamp: "2",
