@@ -3,7 +3,7 @@ const postcss = require("postcss");
 const deafults = {
 	functionName: "xl",
 	groups: {},
-	dataThemeSelector: 'html[data-theme="dark"]',
+	dataThemeSelector: "html[data-theme='dark']",
 	nestingPlugin: null,
 };
 

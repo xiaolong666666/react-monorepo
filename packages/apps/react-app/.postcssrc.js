@@ -1,4 +1,5 @@
 const { groups } = require("./colorGroups");
+const postcssNesting = require("postcss-nesting");
 
 module.exports = {
 	// plugins: {
@@ -19,7 +20,11 @@ module.exports = {
 		"autoprefixer",
 		"tailwindcss",
 		require("postcss-nested"),
-		require("postcss-nesting"),
-		require("./postcss-plugins/themePlugin")({ groups }),
+		// require("postcss-nesting"),
+		//? https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting
+		postcssNesting({
+			silenceAtNestWarning: true,
+		}),
+		require("./plugins/postcss-plugins/themePlugin")({ groups }),
 	],
 };
