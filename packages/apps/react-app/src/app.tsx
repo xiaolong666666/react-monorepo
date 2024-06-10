@@ -4,6 +4,9 @@ import Router from "./router";
 
 type Props = {};
 
+// webpack 运行时变量
+console.log(process.env.PRIMARY);
+
 const App = (props: Props) => (
 	<BrowserRouter>
 		<Router />

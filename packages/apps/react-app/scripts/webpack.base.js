@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = function (isDev) {
 	return {
@@ -113,6 +114,9 @@ module.exports = function (isDev) {
 				filename: isDev
 					? "static/css/[name].css"
 					: "static/css/[name].[contenthash:4].css",
+			}),
+			new webpack.DefinePlugin({
+				"process.env.PRIMARY": JSON.stringify(process.env.PRIMARY),
 			}),
 		],
 	};
