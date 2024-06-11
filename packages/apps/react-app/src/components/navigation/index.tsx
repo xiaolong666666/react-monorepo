@@ -11,7 +11,7 @@ type Props = {
 
 const Navigation = ({ isFirstLevel }: Props) => {
 	return (
-		<div className="sticky top-0 left-0 w-screen h-13 bg-slate-50 shadow box-border overflow-hidden z-50">
+		<div className="sticky top-0 left-0 w-screen h-13 bg-white shadow box-border overflow-hidden z-50">
 			<div className="max-w-7xl min-w-6xl mx-auto my-0 flex items-center">
 				<div
 					className={`w-full relative transition-all duration-300 ${isFirstLevel ? "top-0" : "-top-13"}`}

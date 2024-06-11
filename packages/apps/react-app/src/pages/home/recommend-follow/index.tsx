@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { Card } from "@xl/xl-react-design";
 import { get } from "@/utils/api/request";
-import Card from "../../../components/card";
 
 type Props = {};
 

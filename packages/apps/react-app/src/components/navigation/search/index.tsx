@@ -6,6 +6,7 @@ import React, {
 	useRef,
 	useState,
 } from "react";
+import { Button } from "@xl/xl-react-design";
 import { CreateLocalStore } from "@xl/store";
 
 type Props = {};
@@ -106,12 +107,7 @@ const Search = (props: Props) => {
 				onKeyDown={onKeyDown}
 				className="w-96 h-8 px-4 border rounded-full border-slate-200 bg-slate-50 text-sm focus:outline-slate-200"
 			/>
-			<button
-				onClick={onSearch}
-				className="w-16 h-8 mx-4 text-sm text-slate-50 rounded-full bg-blue-500 hover:bg-blue-600 transition-all duration-300"
-			>
-				提问
-			</button>
+			<Button onClick={onSearch}>提问</Button>
 			{isHistoryListVisible && (
 				<div
 					className="fixed top-11 z-10 w-96 p-2 bg-white border border-gray-200 rounded-md shadow-sm"

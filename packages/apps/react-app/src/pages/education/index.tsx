@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { Button } from "@xl/xl-react-design";
 import Register from "./register";
 import Login from "./login";
-import Button from "@/components/button";
 
 type Props = {};
 

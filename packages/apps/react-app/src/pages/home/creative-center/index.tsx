@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "../../../components/card";
+import { Card } from "@xl/xl-react-design";
 
 type Props = {};
 

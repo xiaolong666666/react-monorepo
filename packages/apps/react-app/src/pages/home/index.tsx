@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { Card } from "@xl/xl-react-design";
 import Navigation from "../../components/navigation";
-import Card from "../../components/card";
 import Tabs from "./tabs";
 import CreativeCenter from "./creative-center";
 import RecommendFollow from "./recommend-follow";

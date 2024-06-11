@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Button from "@/components/button";
+import { Button } from "@xl/xl-react-design";
 import { ValidCore } from "@xl/valid-core";
 
 type Props = {

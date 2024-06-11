@@ -25,6 +25,7 @@
 		"@xl/cli": "workspace:^",
 		"@xl/store": "workspace:^",
 		"@xl/valid-core": "workspace:^",
+		"@xl/xl-react-design": "workspace:^",
 		"autoprefixer": "^10.4.19",
 		"axios": "^1.7.2",
 		"babel-loader": "^9.1.3",
