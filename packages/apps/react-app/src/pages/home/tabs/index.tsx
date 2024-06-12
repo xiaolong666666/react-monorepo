@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
-import { useObserver } from "../../../utils/hooks";
+import { useObserver } from "@/utils/hooks";
 
 type Props = {
 	onChange: (v: boolean) => void;

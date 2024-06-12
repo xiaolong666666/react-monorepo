@@ -162,21 +162,17 @@ const CreativeCenter = (props: Props) => {
 						onMouseEnter={(e) => {
 							e.preventDefault();
 							e.stopPropagation();
-							console.log(
-								e.target?.children?.[0]?.children?.[0]?.children?.[0]?.setAttribute(
-									"opacity",
-									0.32,
-								),
+							e.target?.children?.[0]?.children?.[0]?.children?.[0]?.setAttribute(
+								"opacity",
+								0.32,
 							);
 						}}
 						onMouseLeave={(e) => {
 							e.preventDefault();
 							e.stopPropagation();
-							console.log(
-								e.target?.children?.[0]?.children?.[0]?.children?.[0]?.setAttribute(
-									"opacity",
-									0.12,
-								),
+							e.target?.children?.[0]?.children?.[0]?.children?.[0]?.setAttribute(
+								"opacity",
+								0.12,
 							);
 						}}
 					>

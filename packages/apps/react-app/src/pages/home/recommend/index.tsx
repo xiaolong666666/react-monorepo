@@ -1,5 +1,6 @@
 import React, { FC, MouseEventHandler, useRef, useState } from "react";
-import { useInfiniteLoad } from "../../../utils/hooks";
+import { useInfiniteLoad, useObserver } from "@/utils/hooks";
+import { sendLog } from "@/utils/track";
 
 type Props = {};
 
@@ -9,6 +10,8 @@ type ItemProps = {
 
 const RecommendItem: FC<ItemProps> = ({ info }) => {
 	const [selected, setSelected] = useState<boolean>(false);
+	const sectionRef = useRef<HTMLDivElement>(null);
+	const lockRef = useRef<boolean>(false);
 	const href = `https://www.zhihu.com/question/${info?.target?.question?.id}/answer/${info?.target?.id}`;
 	const operateList = [
 		{
@@ -91,13 +94,27 @@ const RecommendItem: FC<ItemProps> = ({ info }) => {
 		},
 	];
 
+	useObserver((bool) => {
+		if (bool && !lockRef.current) {
+			sendLog({
+				eventName: "CARD_SHOW",
+				msg: info?.target?.question?.title,
+			});
+			lockRef.current = true;
+		}
+	}, sectionRef);
+
 	const onHandleClick: MouseEventHandler = (e) => {
 		e.preventDefault();
 		setSelected((v) => !v);
 	};
 
 	return (
-		<div key={info.id} className="flex flex-col items-start p-5 border-t">
+		<div
+			key={info.id}
+			ref={sectionRef}
+			className="flex flex-col items-start p-5 border-t"
+		>
 			<div className="flex justify-start h-auto">
 				<a
 					href={href}
