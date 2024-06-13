@@ -1,11 +1,15 @@
 import Koa from "koa";
 import Router from "koa-router";
+import bodyParser from "koa-bodyParser";
 import "./controllers/index";
 import { RequestMethod, controllers } from "./utils/index";
+import { jwtVerify } from "./utils/jwt";
 
 const app = new Koa();
 const router = new Router();
 const COMMON_API = "/api";
+
+app.use(bodyParser()); // 解析请求体
 
 app.use(async (ctx, next) => {
 	ctx.set("Access-Control-Allow-Origin", "*");
@@ -19,6 +23,8 @@ app.use(async (ctx, next) => {
 		await next(ctx);
 	}
 });
+
+app.use(jwtVerify(["/api/user/login", "/api/user/register"]));
 
 controllers.forEach((controller) => {
 	let { constructor, path, method, handler } = controller;
