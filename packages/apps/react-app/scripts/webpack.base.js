@@ -29,15 +29,25 @@ module.exports = function (isDev) {
 			},
 		},
 
-		// loeader：根据不同类型的文件，使用不同的解析器去识别对应文件的内容
+		// loader：根据不同类型的文件，使用不同的解析器去识别对应文件的内容
 		module: {
 			rules: [
 				{
 					test: /\.(js|jsx|ts|tsx)$/,
 					exclude: /node_modules/,
-					use: {
-						loader: "babel-loader",
-					},
+					use: [
+						{
+							// 开启多线程
+							loader: "thread-loader",
+							options: {
+								workers: 3,
+							},
+						},
+						{
+							// 缓存文件
+							loader: "babel-loader?cacheDirectory",
+						},
+					],
 				},
 				{
 					// oneOf: 只选一个就行

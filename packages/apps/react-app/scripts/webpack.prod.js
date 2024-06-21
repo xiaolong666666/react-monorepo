@@ -1,6 +1,9 @@
+const path = require("path");
+const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
+const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin");
 const getBaseConfig = require("./webpack.base");
 const ZipPlugin = require("../plugins/webpack-plugins/zipPlugin");
 
@@ -41,6 +44,16 @@ module.exports = merge(getBaseConfig(false), {
 	},
 
 	plugins: [
+		new webpack.DllReferencePlugin({
+			context: __dirname,
+			manifest: require("../dist/dll/vendor.manifest.json"),
+		}),
+		new AddAssetHtmlWebpackPlugin({
+			filepath: path.resolve(__dirname, "../dist/dll/vendor.dll.js"),
+			outputPath: "../dist/dll", // 文件输出目录
+			publicPath: "./dll/", // 脚本或链接标签的公共路径
+			includeSourcemap: false,
+		}),
 		new ZipPlugin({
 			fileName: "front.zip",
 		}),
