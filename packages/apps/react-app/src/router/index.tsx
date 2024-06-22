@@ -3,6 +3,7 @@ import { useRoutes, RouteObject } from "react-router-dom";
 import Home from "@/pages/home";
 import Recommend from "@/pages/home/recommend";
 import Education from "@/pages/education";
+import Login from "@/pages/login";
 
 type ExtraBizObject = {
 	title?: ReactNode;
@@ -52,6 +53,11 @@ export const routes: Array<ZHRoute> = [
 		path: "/question/waiting",
 		element: <div>等你来答</div>,
 		title: "等你来答",
+	},
+	{
+		path: "/signin",
+		element: <Login />,
+		title: "登录页",
 	},
 ];
 

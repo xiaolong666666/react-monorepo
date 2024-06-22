@@ -1,5 +1,15 @@
-import { FC, RefObject, useEffect, useRef, useState } from "react";
-import { getInfiniteLoad } from "../api/request";
+import { RefObject, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getInfiniteLoad } from "../api";
+import { getToken } from "..";
+
+export const useAuth = () => {
+	const isLogined = !!getToken();
+	const navigate = useNavigate();
+	if (!isLogined) {
+		navigate("/signin");
+	}
+};
 
 // 监听
 export const useObserver = (
@@ -43,7 +53,7 @@ export const useInfiniteLoad = ({
 				startNum: listRef.current.length,
 				pageSize,
 			})
-				.then((res) => {
+				.then((res = { list: [] }) => {
 					listRef.current = [...listRef.current, ...res.list];
 					setList(listRef.current);
 				})

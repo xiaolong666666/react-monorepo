@@ -1,5 +1,6 @@
 import UserService from "../services/UserService";
 import { Controller, RequestMapping, RequestMethod } from "../utils/index";
+import { refreshToken } from "../utils/jwt";
 
 @Controller("/user")
 export default class UserController {
@@ -25,5 +26,11 @@ export default class UserController {
 		const { body } = ctx.request;
 		const userService = new UserService();
 		ctx.body = await userService.validate(body);
+	}
+
+	@RequestMapping(RequestMethod.POST, "/refresh")
+	async refresh(ctx) {
+		const { body } = ctx.request;
+		ctx.body = await refreshToken(body.refreshToken);
 	}
 }

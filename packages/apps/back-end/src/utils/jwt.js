@@ -2,9 +2,9 @@ import jwt from "jsonwebtoken";
 
 const SALT = "kklt&&bjt";
 
-export const signature = (user) =>
+export const signature = (user, expiresIn = "60s") =>
 	jwt.sign(user, SALT, {
-		expiresIn: "10h",
+		expiresIn,
 	});
 
 const verify = async (token) =>
@@ -19,6 +19,29 @@ const verify = async (token) =>
 				resolve({
 					status: "success",
 					data,
+				});
+			}
+		});
+	});
+
+export const refreshToken = async (refreshToken) =>
+	new Promise((resolve, reject) => {
+		jwt.verify(refreshToken, SALT, (err, data) => {
+			if (err) {
+				resolve({
+					status: "error",
+					message: err.message,
+				});
+			} else {
+				const { username } = data;
+				const token = signature({ username });
+				const refreshToken = signature({ username }, "1h");
+				resolve({
+					status: "success",
+					data: {
+						token,
+						refreshToken,
+					},
 				});
 			}
 		});
@@ -44,9 +67,9 @@ export const jwtVerify = (whiteList) => async (ctx, next) => {
 			if (res.status === "success") {
 				next();
 			} else {
-				ctx.status = 403;
+				ctx.status = 401;
 				ctx.body = {
-					code: 403,
+					code: 401,
 					message: "token is invalid",
 				};
 			}

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Card } from "@xl/xl-react-design";
-import { get } from "@/utils/api/request";
+import { get } from "@/utils/api";
 
 type Props = {};
 
@@ -10,7 +10,7 @@ const RecommendFollow = (props: Props) => {
 
 	useEffect(() => {
 		get("/recommend_follow_people", { rec_type: "PC_HOME_FEED" }).then(
-			(res) => setList(res.list),
+			(res = { list: [] }) => setList(res.list),
 		);
 	}, []);
 

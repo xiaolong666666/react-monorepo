@@ -16,5 +16,15 @@ module.exports = merge(getBaseConfig(true), {
 			// 托管的静态 public 文件
 			directory: path.join(__dirname, "../public"),
 		},
+		proxy: [
+			{
+				context: ["/api"],
+				target: "http://127.0.0.1:3006",
+				changeOrigin: true,
+				// pathRewrite: {
+				// 	"^/api": "",
+				// },
+			},
+		],
 	},
 });

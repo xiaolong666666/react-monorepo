@@ -24,7 +24,7 @@ const Menu = (props: Props) => {
 
 	return (
 		<ul className="flex h-full ml-6 mr-4">
-			{routes?.map(({ path, title }) => (
+			{routes.slice(0, 4)?.map(({ path, title }) => (
 				<NavLink
 					key={path}
 					to={path as string}

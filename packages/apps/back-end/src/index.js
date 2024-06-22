@@ -24,7 +24,9 @@ app.use(async (ctx, next) => {
 	}
 });
 
-app.use(jwtVerify(["/api/user/login", "/api/user/register"]));
+app.use(
+	jwtVerify(["/api/user/login", "/api/user/register", "/api/user/refresh"]),
+);
 
 controllers.forEach((controller) => {
 	let { constructor, path, method, handler } = controller;

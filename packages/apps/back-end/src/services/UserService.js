@@ -6,12 +6,14 @@ export default class UserService {
 			if (username === "xl") {
 				if (password === "xl_hack") {
 					const token = signature({ username });
+					const refreshToken = signature({ username }, "1h");
 					return {
 						code: 200,
 						msg: "登录成功！",
 						status: "success",
 						data: {
 							token,
+							refreshToken,
 						},
 					};
 				} else {
@@ -36,4 +38,6 @@ export default class UserService {
 			};
 		}
 	}
+
+	async refresh({ refreshToken }) {}
 }
