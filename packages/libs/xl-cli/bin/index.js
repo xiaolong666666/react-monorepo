@@ -11,7 +11,7 @@ const path = require("path");
 // program
 // 	.version("0.0.1")
 // 	.description("this is xl cli version")
-// 	.command("pack [entry]")
+// 	.command("pack [entry]")	// <必选> [可选]
 // 	.description("this is xl cli entry")
 // 	.option("-d --dev", "开发模式")
 // 	.option("-p --prod", "生产模式")
